@@ -1,8 +1,9 @@
 package ambulance.service.models;
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 public class user {
     @MongoId
-    private  String id;
+    private ObjectId id;
     private final String firstName;
     private final String lastName;
     private String passHash;
@@ -26,11 +27,11 @@ public class user {
                 '}';
     }
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 

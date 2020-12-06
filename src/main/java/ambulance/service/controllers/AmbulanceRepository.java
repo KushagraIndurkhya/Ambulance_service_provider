@@ -12,4 +12,5 @@ public interface AmbulanceRepository extends MongoRepository<ambulance,String> {
     List<ambulance> findAll();
     List<ambulance> findByNumberplate(String np);
     List<ambulance> findByStatus(availability available);
+
 }

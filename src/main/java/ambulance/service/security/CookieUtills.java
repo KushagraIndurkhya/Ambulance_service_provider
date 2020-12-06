@@ -3,11 +3,12 @@ import ambulance.service.models.userTypes;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 
-public class Jwt
+public class CookieUtills
 {
-    Algorithm algorithm=Algorithm.HMAC256("ImaginaryHospitalRocks");
+
     public String createToken(String userID,String username,userTypes role)
     {
+        Algorithm algorithm=Algorithm.HMAC256("ImaginaryHospital");
         String token= com.auth0.jwt.JWT.create()
                 .withIssuer("AmbulanceSecurity")
                 .withClaim("username",username)
@@ -19,6 +20,7 @@ public class Jwt
     }
     public userTypes getRole(String token)
     {
+
         String user= com.auth0.jwt.JWT.decode(token).getClaim("role").asString();
         userTypes[] available_types =userTypes.values();
         for (userTypes role:available_types)

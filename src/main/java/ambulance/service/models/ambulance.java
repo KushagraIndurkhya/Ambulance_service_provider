@@ -1,5 +1,6 @@
 package ambulance.service.models;
 //import lombok.Data;
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
@@ -7,8 +8,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 @Document
 public class ambulance {
     @MongoId
-    private String id;
-    @Indexed(unique=true)
+    private ObjectId id;
     private final String numberplate;
     private availability status;
 
@@ -16,9 +16,14 @@ public class ambulance {
         this.numberplate = numberplate;
         this.status = status;
     }
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
+
+    public void setId(ObjectId id) {
+        this.id = id;
+    }
+
     public String getNumberplate() {
         return numberplate;
     }

@@ -11,4 +11,11 @@ public class PasswordUtills {
         }
         return sb.toString();
     }
+    public static boolean checkPass(String pass, String toBeChecked)
+    {
+        return pass.equals(toBeChecked);
+
+    }
+
+
 }
