@@ -1,13 +1,30 @@
 package ambulance.service.models;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
+
+import javax.validation.constraints.NotNull;
+
+@Document(collection = "user")
+@ApiModel
 public class user {
     @MongoId
+    @ApiModelProperty(notes = "Auto Generated Mongo Id")
     private ObjectId id;
+    @NotNull
+    @ApiModelProperty(notes = "First name of the user")
     private final String firstName;
+    @NotNull
+    @ApiModelProperty(notes = "Last name of the user")
     private final String lastName;
     private String passHash;
+    @NotNull
+    @ApiModelProperty(notes = "Hospital Generated userId")
     private final String userId;
+    @NotNull
+    @ApiModelProperty(notes = "Role of the user")
     private userTypes role;
 
     public user(String firstName, String lastName, String userId) {
@@ -24,6 +41,7 @@ public class user {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", role=" + role +
+                ", password"+passHash+
                 '}';
     }
 

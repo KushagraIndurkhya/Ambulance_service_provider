@@ -1,6 +1,6 @@
 package ambulance.service.security;
 import ambulance.service.models.userTypes;
-import com.auth0.jwt.JWT;
+import com.auth0.jwt.*;
 import com.auth0.jwt.algorithms.Algorithm;
 
 public class CookieUtills
@@ -20,15 +20,18 @@ public class CookieUtills
     }
     public userTypes getRole(String token)
     {
-
-        String user= com.auth0.jwt.JWT.decode(token).getClaim("role").asString();
-        userTypes[] available_types =userTypes.values();
-        for (userTypes role:available_types)
-            {
-                if(user.equalsIgnoreCase(role.name()))
+        try {
+            String user = com.auth0.jwt.JWT.decode(token).getClaim("role").asString();
+            userTypes[] available_types = userTypes.values();
+            for (userTypes role : available_types) {
+                if (user.equalsIgnoreCase(role.name()))
                     return role;
             }
-        return userTypes.GUEST;
+            return userTypes.GUEST;
+        }
+        catch (Exception e){
+            return userTypes.GUEST;
+        }
     }
     public boolean isAdmin(String token)
     {
@@ -36,20 +39,19 @@ public class CookieUtills
     }
     public String getName(String token)
     {
-        return com.auth0.jwt.JWT.decode(token).getClaim("username").asString();
+        try {
+            return com.auth0.jwt.JWT.decode(token).getClaim("username").asString();
+        }
+        catch (Exception e){
+            return "";
+        }
+
     }
     public String getID(String token)
     {
         return com.auth0.jwt.JWT.decode(token).getClaim("userID").asString();
     }
     public boolean isLoggedin(String token){
-        String user= com.auth0.jwt.JWT.decode(token).getClaim("role").asString();
-        userTypes[] available_types =userTypes.values();
-        for (userTypes role:available_types)
-        {
-            if(user.equalsIgnoreCase(role.name()))
-                return true;
-        }
-        return false;
-    }
+        System.out.print(getRole(token).name());
+        return !(getRole(token) == userTypes.GUEST); }
 }

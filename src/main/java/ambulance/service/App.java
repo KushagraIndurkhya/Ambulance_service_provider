@@ -7,12 +7,6 @@ import java.lang.String;
 public class App {
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
-	
-
 	}
-	// @RequestMapping("/")
-	// public String welcome()
-	// {
-	// 	return "Welcome to Ambulance service Provider";
-	// }
+
 }

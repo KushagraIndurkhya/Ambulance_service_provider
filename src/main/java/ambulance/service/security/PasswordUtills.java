@@ -14,8 +14,5 @@ public class PasswordUtills {
     public static boolean checkPass(String pass, String toBeChecked)
     {
         return pass.equals(toBeChecked);
-
     }
-
-
 }
