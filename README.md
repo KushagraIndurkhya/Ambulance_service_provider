@@ -1,10 +1,7 @@
 <img src="http://ForTheBadge.com/images/badges/made-with-java.svg">
 
 # Ambulance Service Provider
-<img src="https://img.shields.io/badge/Framewrk-Spring Boot-green">
-<img src="https://img.shields.io/badge/Documentation-SwaggerUI-Blue">
-<img src="https://img.shields.io/badge/Deployement-Heroku-purple">
-<img src="https://img.shields.io/badge/DB-MongoDB-green">
+<img src="https://img.shields.io/badge/Framework-Spring Boot-green">  <img src="https://img.shields.io/badge/Documentation-SwaggerUI-Blue">  <img src="https://img.shields.io/badge/Deployement-Heroku-purple">  <img src="https://img.shields.io/badge/DB-MongoDB-green">
 
 
 This project is a simple hospital management utility providing a  ambulance availability management system for hospitals with following functionalities:
@@ -80,7 +77,7 @@ To check if the app is running either navigate in the browser or use curl
 
 if you see ```{"status":UP}``` then the app is running
 
-###Scope of improvement:
+### Scope of improvement:
 + Sending generated password via email
 + Extend the project to maintain status and availability of rooms and OTs as well
 
