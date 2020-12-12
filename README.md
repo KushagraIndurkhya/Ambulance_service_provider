@@ -20,7 +20,7 @@ This project is a simple hospital management utility providing a  ambulance avai
 
 For Api Documentation: [Visit here](https://asp-swe.herokuapp.com/swagger-ui.html#/) *documented using swagger UI*
 
-Live App deployed on heroku: [here](https://asp-swe.herokuapp.com/)
+Live App deployed on heroku: [here](https://asp-swe.herokuapp.com/swagger-ui.html#/)
 
 
 
@@ -45,7 +45,7 @@ To run the spring app on a linux terminal
 
 To run the spring app on a windows command prompt
 
-``` ./mvnw.cmd spring-boot:run```
+``` mvnw.cmd spring-boot:run```
 
 To check if the app is running either navigate in the browser or use curl
 ```curl localhost:8080/actuator/health```
@@ -67,7 +67,7 @@ To build the spring app on a linux terminal
 
 To build the spring app on a windows command prompt
 
-``` ./mvnw.cmd clean install```
+``` mvnw.cmd clean install```
 
 To run the packaged jar file
 ```java -jar ./target/App-0.0.1.jar```
